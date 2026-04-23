@@ -1,0 +1,4 @@
+#separator \x09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	host	uri	auth_type
+#types	time	string	addr	port	addr	port	string	string	string
+1776927553.0	H1	192.168.56.3	54001	192.168.56.10	80	web-frontend	/login	basic

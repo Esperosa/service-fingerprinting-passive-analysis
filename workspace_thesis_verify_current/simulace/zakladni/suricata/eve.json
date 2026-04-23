@@ -1,0 +1,2 @@
+{"timestamp":"2026-04-23T06:58:33Z","flow_id":1001,"src_ip":"192.168.56.2","dest_ip":"192.168.56.20","dest_port":23,"proto":"TCP","event_type":"alert","alert":{"signature_id":2100010,"signature":"TELNET plaintext management traffic","severity":2}}
+{"timestamp":"2026-04-23T06:59:13Z","flow_id":1002,"src_ip":"192.168.56.3","dest_ip":"192.168.56.10","dest_port":80,"proto":"TCP","event_type":"alert","alert":{"signature_id":2100011,"signature":"HTTP Basic credentials over plaintext channel","severity":1}}

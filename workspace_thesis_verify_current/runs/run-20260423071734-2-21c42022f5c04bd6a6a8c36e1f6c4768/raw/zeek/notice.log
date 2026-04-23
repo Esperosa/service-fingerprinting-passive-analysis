@@ -1,0 +1,4 @@
+#separator \x09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	note	msg
+#types	time	string	addr	port	addr	port	string	string
+1776929313.0	C8	192.168.56.2	53211	192.168.56.20	23	Plaintext::Telnet	Telnet management session observed

@@ -1,0 +1,2 @@
+{"timestamp":"2026-04-23T07:28:33Z","flow_id":2001,"src_ip":"192.168.56.2","dest_ip":"192.168.56.20","dest_port":23,"proto":"TCP","event_type":"alert","alert":{"signature_id":2100010,"signature":"TELNET plaintext management traffic","severity":2}}
+{"timestamp":"2026-04-23T07:29:43Z","flow_id":2002,"src_ip":"192.168.56.6","dest_ip":"192.168.56.10","dest_port":8080,"proto":"TCP","event_type":"alert","alert":{"signature_id":2100100,"signature":"Administrative HTTP endpoint observed on port 8080","severity":3}}

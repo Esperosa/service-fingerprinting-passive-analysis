@@ -1,0 +1,52 @@
+{
+  "nazev": "Zmena prostredi: Apache je aktualizovan, pribyla sluzba na 8080 a novy host.",
+  "popis": "Zmena prostredi: Apache je aktualizovan, pribyla sluzba na 8080 a novy host.",
+  "profile": "demo",
+  "provider": "demo",
+  "scope": [
+    "192.168.56.0/24"
+  ],
+  "ports": [
+    21,
+    22,
+    23,
+    80,
+    443,
+    8080,
+    8443
+  ],
+  "compare_to": "zakladni",
+  "expectations": {
+    "min_hosts": 4,
+    "min_services": 7,
+    "min_cves": 2,
+    "min_events": 5,
+    "min_findings": 4,
+    "min_high_priority_services": 1,
+    "required_event_types": [
+      "plaintext_protocol",
+      "http_basic_without_tls",
+      "unexpected_traffic",
+      "connection_timeout_burst",
+      "packet_rate_spike",
+      "service_overload_risk"
+    ],
+    "required_finding_types": [
+      "high_risk_cve_exposure",
+      "plaintext_management_protocol",
+      "new_exposed_service",
+      "service_overload_risk"
+    ],
+    "required_service_keys": [
+      "192.168.56.10/tcp/80"
+    ],
+    "expected_new_hosts": [
+      "192.168.56.40"
+    ],
+    "expected_changed_services": [
+      "192.168.56.10/tcp/80",
+      "192.168.56.10/tcp/8080",
+      "192.168.56.40/tcp/80"
+    ]
+  }
+}

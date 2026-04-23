@@ -1,0 +1,18 @@
+workspace_root = "./workspace"
+host = "127.0.0.1"
+port = 8080
+nvd_api_key_env = "NVD_API_KEY"
+
+[retention]
+max_runs = 50
+keep_raw = true
+
+[security]
+require_api_token = false
+api_token_env = "BAKULA_API_TOKEN"
+
+[platform]
+enabled = false
+database_path = "platform.sqlite"
+leader_lease_seconds = 30
+job_lease_seconds = 120

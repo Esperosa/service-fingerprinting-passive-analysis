@@ -7,6 +7,8 @@
 /logs/
 /workspace/
 /workspace_*/
+!/workspace_thesis_verify_current/
+!/workspace_thesis_verify_current/**
 
 *.pdb
 *.rlib

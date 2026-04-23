@@ -1,0 +1,6 @@
+#separator \x09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	duration	orig_bytes	resp_bytes	orig_pkts	resp_pkts	missed_bytes	conn_state	history
+#types	time	string	addr	port	addr	port	string	interval	count	count	count	count	count	string	string
+1776927633.0	CX1	192.168.56.90	41000	192.168.56.30	3306	tcp	0.060	16000	9000	240	170	3072	S0	ShADtr
+1776927635.0	CX2	192.168.56.90	41001	192.168.56.30	3306	tcp	1.050	18400	10200	70	47	0	SF	ShADadf
+1776927637.0	CX3	192.168.56.90	41002	192.168.56.30	3306	tcp	0.080	20800	11400	272	190	0	S0	ShADtr

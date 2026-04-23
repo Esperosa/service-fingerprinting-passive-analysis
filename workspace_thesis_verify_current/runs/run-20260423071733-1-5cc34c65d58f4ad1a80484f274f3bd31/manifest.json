@@ -1,0 +1,46 @@
+{
+  "run_id": "run-20260423071733-1-5cc34c65d58f4ad1a80484f274f3bd31",
+  "generated_at": "2026-04-23T07:17:34.906831100Z",
+  "files": [
+    {
+      "path": "raw/nmap.xml",
+      "bytes": 2000,
+      "sha256": "de75018112523cd69cb6fabab8f1f67b236ad07248729d87d904a98253d26128"
+    },
+    {
+      "path": "raw/suricata-eve.json",
+      "bytes": 505,
+      "sha256": "6c241527a43600f3da85353dd69051754a9ba6f28a21958663eb9ee1c859b15e"
+    },
+    {
+      "path": "raw/zeek/conn.log",
+      "bytes": 553,
+      "sha256": "e400769ee80ee757ad4d0b26b8242454daa5107d9087fbd9bca0a71baf7aa228"
+    },
+    {
+      "path": "raw/zeek/http.log",
+      "bytes": 227,
+      "sha256": "b6b7854ff6d72af69ef9436d9ae10a3741fdf33d5b716ab3c2aa6590de6db1e7"
+    },
+    {
+      "path": "raw/zeek/notice.log",
+      "bytes": 237,
+      "sha256": "2b0c418b19d8c2284961fc076c60b90dbc8c99ba7236341eb0ea3f54cdfb207d"
+    },
+    {
+      "path": "report.json",
+      "bytes": 79089,
+      "sha256": "1f6e34ec49515d5a2b0dab1e61935675a3fdb65e908fed238f02f0c67f773d56"
+    },
+    {
+      "path": "report.md",
+      "bytes": 30927,
+      "sha256": "a60e03f7796a0dc9f7f55ca6e1bcd8cfb2dba6474bfe0d48ad72e249b68f845a"
+    },
+    {
+      "path": "report.txt",
+      "bytes": 28476,
+      "sha256": "dbdbfc16695db9dad480bb5d6c2d9972f949bc9cdf57d81417aacc9ab75abf14"
+    }
+  ]
+}
