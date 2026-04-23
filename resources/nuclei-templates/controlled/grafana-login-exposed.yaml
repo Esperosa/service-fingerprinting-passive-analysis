@@ -1,0 +1,27 @@
+id: bakula-grafana-login-exposed
+
+info:
+  name: Grafana login page exposed
+  author: bakula
+  severity: medium
+  description: Grafana login endpoint is publicly reachable.
+  tags: bakula,http,grafana,login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "grafana"
+          - "login"

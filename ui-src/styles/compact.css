@@ -1,0 +1,138 @@
+.compact-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--gap-3);
+  height: 100%;
+}
+
+.compact-header-frame {
+  display: grid;
+  gap: var(--gap-3);
+}
+
+.compact-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-3);
+}
+
+.compact-card,
+.compact-focus,
+.compact-focus-frame {
+  min-height: 0;
+}
+
+.compact-card-frame,
+.compact-header-frame .mini-metric {
+  text-align: center;
+}
+
+.focus-card {
+  cursor: pointer;
+}
+
+@media (max-width: 61.1875rem) {
+  .app-shell {
+    padding: calc(var(--shell-pad) * 0.88);
+  }
+
+  .compact-header-frame .control-row {
+    justify-content: flex-start;
+  }
+
+  .chat-quick-row,
+  .export-chip-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 38.75rem) {
+  .compact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand-title {
+    font-size: var(--font-lg);
+  }
+
+  .chat-bubble {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@keyframes pingdot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 0.5rem rgba(52, 211, 153, 0.08);
+  }
+}
+
+@keyframes flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(52, 211, 153, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.75rem rgba(52, 211, 153, 0.24));
+  }
+}
+
+@keyframes bubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0.55rem) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes typingPulse {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes agentProbePulse {
+  0%,
+  100% {
+    transform: scale(0.72);
+    opacity: 0.12;
+  }
+
+  50% {
+    transform: scale(1.24);
+    opacity: 0.28;
+  }
+}
+
+@keyframes progressBreath {
+  0%,
+  100% {
+    filter: saturate(0.95) brightness(0.96);
+  }
+
+  50% {
+    filter: saturate(1.18) brightness(1.08);
+  }
+}

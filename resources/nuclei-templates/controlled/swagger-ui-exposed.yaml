@@ -1,0 +1,27 @@
+id: bakula-swagger-ui-exposed
+
+info:
+  name: Swagger UI exposed
+  author: bakula
+  severity: medium
+  description: Interactive API documentation is publicly reachable.
+  tags: bakula,http,swagger,api
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/swagger-ui/index.html"
+      - "{{BaseURL}}/swagger-ui/"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "Swagger UI"

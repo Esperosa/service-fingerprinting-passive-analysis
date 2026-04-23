@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "id": "gb-001",
+      "name": "OpenSSH outdated version",
+      "host_ip": "192.168.56.20",
+      "port": 22,
+      "severity": "high",
+      "summary": "Credentialed audit indicates outdated OpenSSH package.",
+      "solution": "Update OpenSSH to supported build and verify ciphers.",
+      "oid": "1.3.6.1.4.1.25623.1.0.108000"
+    }
+  ]
+}

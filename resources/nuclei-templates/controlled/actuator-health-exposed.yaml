@@ -1,0 +1,26 @@
+id: bakula-actuator-health-exposed
+
+info:
+  name: Spring actuator health endpoint exposed
+  author: bakula
+  severity: low
+  description: Health endpoint can disclose service status and stack hints.
+  tags: bakula,http,actuator,spring
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/actuator/health"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "status"

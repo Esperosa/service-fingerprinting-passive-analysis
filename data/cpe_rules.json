@@ -1,0 +1,30 @@
+[
+  {
+    "name": "apache-httpd",
+    "service_name": "http",
+    "product_contains": "apache",
+    "vendor": "apache",
+    "product": "http_server"
+  },
+  {
+    "name": "nginx",
+    "service_name": "http",
+    "product_contains": "nginx",
+    "vendor": "nginx",
+    "product": "nginx"
+  },
+  {
+    "name": "openssh",
+    "service_name": "ssh",
+    "product_contains": "openssh",
+    "vendor": "openbsd",
+    "product": "openssh"
+  },
+  {
+    "name": "vsftpd",
+    "service_name": "ftp",
+    "product_contains": "vsftpd",
+    "vendor": "vsftpd_project",
+    "product": "vsftpd"
+  }
+]

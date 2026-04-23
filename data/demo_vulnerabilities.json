@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "cpe_prefix": "cpe:2.3:a:apache:http_server:2.4.49",
+      "cves": [
+        {
+          "cve_id": "CVE-2021-41773",
+          "summary": "Path traversal a moznost RCE v Apache HTTP Server 2.4.49.",
+          "cvss_version": "3.1",
+          "base_score": 7.5,
+          "severity": "HIGH",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-41773"
+          ]
+        },
+        {
+          "cve_id": "CVE-2021-42013",
+          "summary": "Nedostatecne odstranena chyba po CVE-2021-41773.",
+          "cvss_version": "3.1",
+          "base_score": 9.8,
+          "severity": "CRITICAL",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-42013"
+          ]
+        }
+      ]
+    },
+    {
+      "cpe_prefix": "cpe:2.3:a:openbsd:openssh:8.9",
+      "cves": [
+        {
+          "cve_id": "CVE-2023-38408",
+          "summary": "Lokalni RCE pres ssh-agent pri urcitych podminkach.",
+          "cvss_version": "3.1",
+          "base_score": 8.8,
+          "severity": "HIGH",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-38408"
+          ]
+        }
+      ]
+    },
+    {
+      "cpe_prefix": "cpe:2.3:a:vsftpd_project:vsftpd:3.0.3",
+      "cves": [
+        {
+          "cve_id": "CVE-2021-3618",
+          "summary": "Problem v pristupovych pravech pri urcite konfiguraci vsftpd.",
+          "cvss_version": "3.1",
+          "base_score": 6.5,
+          "severity": "MEDIUM",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-3618"
+          ]
+        }
+      ]
+    }
+  ]
+}

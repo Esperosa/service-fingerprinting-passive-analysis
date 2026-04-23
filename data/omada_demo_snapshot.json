@@ -1,0 +1,26 @@
+{
+  "devices": [
+    {
+      "id": "omada-ap-01",
+      "name": "Omada-AP-Branch",
+      "ip": "192.168.56.13",
+      "mac": "33:44:55:66:77:88",
+      "vendor": "TP-Link",
+      "model": "EAP620",
+      "status": "connected",
+      "device_type": "access-point"
+    }
+  ],
+  "clients": [
+    {
+      "id": "omada-client-01",
+      "name": "Tablet sklad",
+      "ip": "192.168.56.72",
+      "mac": "de:ad:be:ef:00:01",
+      "vendor": "Samsung",
+      "ssid": "WarehouseWiFi",
+      "attached_device_id": "omada-ap-01"
+    }
+  ],
+  "links": []
+}

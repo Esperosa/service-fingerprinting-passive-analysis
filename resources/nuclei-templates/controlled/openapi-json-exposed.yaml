@@ -1,0 +1,27 @@
+id: bakula-openapi-json-exposed
+
+info:
+  name: OpenAPI specification exposed
+  author: bakula
+  severity: low
+  description: OpenAPI schema endpoint is reachable and may leak API surface details.
+  tags: bakula,http,openapi,api
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/openapi.json"
+      - "{{BaseURL}}/v3/api-docs"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: regex
+        part: body
+        regex:
+          - '"openapi"\s*:\s*"3\.'

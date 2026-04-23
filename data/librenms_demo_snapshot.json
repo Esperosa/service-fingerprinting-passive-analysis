@@ -1,0 +1,55 @@
+{
+  "devices": [
+    {
+      "id": "1",
+      "name": "core-sw01",
+      "ip": "192.168.56.2",
+      "mac": "00:11:22:33:44:55",
+      "vendor": "Cisco",
+      "model": "C9300",
+      "serial": "FDO1234",
+      "status": "up",
+      "location": "HQ-F1",
+      "device_type": "switch",
+      "observations": ["ports_total=48", "os=ios-xe"]
+    },
+    {
+      "id": "2",
+      "name": "dist-rtr01",
+      "ip": "192.168.56.1",
+      "mac": "00:11:22:aa:bb:cc",
+      "vendor": "Cisco",
+      "model": "ISR",
+      "serial": "ISR1234",
+      "status": "up",
+      "location": "HQ-Rack",
+      "device_type": "router",
+      "observations": ["os=ios-xe"]
+    }
+  ],
+  "links": [
+    {
+      "source_id": "1",
+      "target_id": "2",
+      "relation": "lldp",
+      "source_port": "Gi1/0/48",
+      "target_port": "Gi0/0/0",
+      "confidence": "high"
+    }
+  ],
+  "vlans": [
+    { "device_id": "1", "vlan_id": "10", "name": "Users" },
+    { "device_id": "1", "vlan_id": "20", "name": "Servers" }
+  ],
+  "arp": [
+    { "device_id": "1", "ip": "192.168.56.25", "mac": "aa:bb:cc:00:00:25", "port": "Gi1/0/10", "vlan": "10" },
+    { "device_id": "1", "ip": "192.168.56.40", "mac": "aa:bb:cc:00:00:40", "port": "Gi1/0/22", "vlan": "20" }
+  ],
+  "fdb": [
+    { "device_id": "1", "mac": "aa:bb:cc:00:00:25", "port": "Gi1/0/10", "vlan": "10" },
+    { "device_id": "1", "mac": "aa:bb:cc:00:00:40", "port": "Gi1/0/22", "vlan": "20" }
+  ],
+  "alerts": [
+    { "id": "a-1", "title": "Interface flapping on core-sw01", "severity": "medium", "device_id": "1", "details": ["if=Gi1/0/10"] }
+  ]
+}

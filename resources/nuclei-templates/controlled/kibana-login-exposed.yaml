@@ -1,0 +1,28 @@
+id: bakula-kibana-login-exposed
+
+info:
+  name: Kibana login page exposed
+  author: bakula
+  severity: medium
+  description: Kibana authentication surface is reachable from scan scope.
+  tags: bakula,http,kibana,login
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/app/login"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "kibana"
+          - "elastic"

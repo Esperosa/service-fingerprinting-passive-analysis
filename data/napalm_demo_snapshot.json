@@ -1,0 +1,17 @@
+{
+  "devices": [
+    {
+      "hostname": "edge-rtr01",
+      "ip": "192.168.56.1",
+      "issues": [
+        {
+          "id": "napalm-001",
+          "title": "NTP servers missing",
+          "severity": "medium",
+          "summary": "Configuration snapshot does not contain expected NTP servers.",
+          "recommendation": "Define approved NTP servers and save the running config."
+        }
+      ]
+    }
+  ]
+}

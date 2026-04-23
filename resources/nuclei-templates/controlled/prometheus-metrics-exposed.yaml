@@ -1,0 +1,27 @@
+id: bakula-prometheus-metrics-exposed
+
+info:
+  name: Prometheus metrics endpoint exposed
+  author: bakula
+  severity: medium
+  description: Metrics endpoint is reachable without additional protection.
+  tags: bakula,http,metrics,prometheus
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/metrics"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "# HELP"
+          - "# TYPE"

@@ -1,0 +1,26 @@
+{
+  "devices": [
+    {
+      "id": "aruba-ap-01",
+      "name": "Aruba-AP-Office",
+      "ip": "192.168.56.12",
+      "mac": "22:33:44:55:66:77",
+      "vendor": "Aruba",
+      "model": "AP-515",
+      "status": "up",
+      "device_type": "access-point"
+    }
+  ],
+  "clients": [
+    {
+      "id": "aruba-client-01",
+      "name": "Telefon host",
+      "ip": "192.168.56.71",
+      "mac": "aa:00:bb:11:cc:22",
+      "vendor": "Apple",
+      "ssid": "GuestWiFi",
+      "attached_device_id": "aruba-ap-01"
+    }
+  ],
+  "links": []
+}

@@ -1,0 +1,12 @@
+{
+  "alerts": [
+    {
+      "id": "wz-001",
+      "level": 9,
+      "description": "Weak SSH configuration detected",
+      "dstip": "192.168.56.20",
+      "rule_id": "5712",
+      "agent_name": "server-01"
+    }
+  ]
+}

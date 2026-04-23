@@ -1,0 +1,77 @@
+{
+  "devices": [
+    {
+      "serial": "Q2XX-AP01",
+      "name": "AP-Lobby",
+      "lan_ip": "192.168.56.20",
+      "mac": "00:11:22:33:44:55",
+      "model": "MR46",
+      "product_type": "wireless",
+      "network_id": "N_12345",
+      "address": "Lobby",
+      "notes": "Guest Wi-Fi coverage",
+      "tags": ["wifi", "guest"],
+      "status": "online"
+    },
+    {
+      "serial": "Q2XX-SW01",
+      "name": "Switch-Floor1",
+      "lan_ip": "192.168.56.21",
+      "mac": "00:11:22:33:44:66",
+      "model": "MS225",
+      "product_type": "switch",
+      "network_id": "N_12345",
+      "address": "Floor 1 closet",
+      "tags": ["access"],
+      "status": "online"
+    }
+  ],
+  "clients": [
+    {
+      "id": "k1",
+      "mac": "AA:BB:CC:DD:EE:01",
+      "ip": "192.168.56.101",
+      "description": "Notebook recepce",
+      "manufacturer": "Dell",
+      "os": "Windows",
+      "recent_device_name": "AP-Lobby",
+      "recent_device_serial": "Q2XX-AP01",
+      "ssid": "Office",
+      "vlan": "20",
+      "status": "online"
+    },
+    {
+      "id": "k2",
+      "mac": "AA:BB:CC:DD:EE:02",
+      "ip": "192.168.56.102",
+      "description": "Telefon host",
+      "manufacturer": "Apple",
+      "os": "iOS",
+      "recent_device_name": "AP-Lobby",
+      "recent_device_serial": "Q2XX-AP01",
+      "ssid": "Guest",
+      "vlan": "30",
+      "status": "online"
+    }
+  ],
+  "lldp_cdp": {
+    "Q2XX-SW01": [
+      {
+        "source_port": "1",
+        "remote_device_name": "AP-Lobby",
+        "remote_device_serial": "Q2XX-AP01",
+        "remote_port": "eth0",
+        "protocol": "lldp"
+      }
+    ],
+    "Q2XX-AP01": [
+      {
+        "source_port": "eth0",
+        "remote_device_name": "Switch-Floor1",
+        "remote_device_serial": "Q2XX-SW01",
+        "remote_port": "1",
+        "protocol": "lldp"
+      }
+    ]
+  }
+}

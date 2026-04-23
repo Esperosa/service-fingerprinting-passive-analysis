@@ -1,0 +1,50 @@
+{
+  "devices": [
+    {
+      "id": "sw-core-1",
+      "name": "CoreSwitch",
+      "ip": "192.168.56.2",
+      "vendor": "Cisco",
+      "model": "C9300",
+      "serial": "FCW1234567A",
+      "status": "up",
+      "location": "serverovna",
+      "device_type": "switch",
+      "observations": [
+        "stack=1",
+        "role=distribution"
+      ]
+    },
+    {
+      "id": "r-edge-1",
+      "name": "EdgeRouter",
+      "ip": "192.168.56.1",
+      "vendor": "MikroTik",
+      "model": "CCR2004",
+      "serial": "MKT1234ABCD",
+      "status": "up",
+      "location": "rack-a",
+      "device_type": "router",
+      "observations": [
+        "wan=present"
+      ]
+    }
+  ],
+  "neighbors": [
+    {
+      "local_device_id": "sw-core-1",
+      "remote_device_id": "r-edge-1",
+      "local_port": "Gi1/0/48",
+      "remote_port": "ether1",
+      "protocol": "lldp"
+    },
+    {
+      "local_device_id": "sw-core-1",
+      "remote_name": "AP-Lobby",
+      "remote_ip": "192.168.56.20",
+      "local_port": "Gi1/0/12",
+      "remote_port": "eth0",
+      "protocol": "lldp"
+    }
+  ]
+}

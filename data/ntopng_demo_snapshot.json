@@ -1,0 +1,24 @@
+{
+  "flows": [
+    {
+      "src_ip": "192.168.56.10",
+      "dst_ip": "93.184.216.34",
+      "dst_port": 443,
+      "protocol": "tcp",
+      "bytes": 120034,
+      "packets": 88,
+      "app": "https",
+      "url": "https://example.com/update"
+    },
+    {
+      "src_ip": "192.168.56.20",
+      "dst_ip": "45.61.49.78",
+      "dst_port": 80,
+      "protocol": "tcp",
+      "bytes": 8096,
+      "packets": 16,
+      "app": "http",
+      "url": "http://45.61.49.78/razor/r4z0r.mips"
+    }
+  ]
+}

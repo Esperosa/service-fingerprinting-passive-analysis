@@ -1,0 +1,27 @@
+id: bakula-directory-listing-exposed
+
+info:
+  name: Directory listing exposed
+  author: bakula
+  severity: low
+  description: Web server root appears to expose directory listing.
+  tags: bakula,http,listing
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "<title>Directory listing"
+          - "<h1>Directory listing"

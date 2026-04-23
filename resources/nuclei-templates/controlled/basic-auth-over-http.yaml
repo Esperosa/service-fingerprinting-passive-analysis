@@ -1,0 +1,26 @@
+id: bakula-basic-auth-over-http
+
+info:
+  name: HTTP Basic Authentication over cleartext
+  author: bakula
+  severity: high
+  description: Basic authentication challenge is exposed over plaintext HTTP.
+  tags: bakula,http,auth,plaintext
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 401
+      - type: regex
+        part: header
+        regex:
+          - "(?i)www-authenticate:\\s*basic"

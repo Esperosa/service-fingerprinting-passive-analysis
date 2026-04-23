@@ -1,0 +1,17 @@
+{
+  "devices": [
+    {
+      "hostname": "branch-fw01",
+      "ip": "192.168.56.254",
+      "issues": [
+        {
+          "id": "netmiko-001",
+          "title": "WAN admin access exposed",
+          "severity": "high",
+          "summary": "Configuration export shows admin HTTPS exposed on WAN.",
+          "recommendation": "Restrict administration to management segment or VPN."
+        }
+      ]
+    }
+  ]
+}

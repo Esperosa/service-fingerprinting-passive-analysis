@@ -1,0 +1,20 @@
+Copyright (c) 2026 Jiri Pelikan
+
+This repository is published as an academic software appendix for review,
+reproducibility, and educational inspection in connection with a bachelor
+thesis at the Faculty of Informatics and Management, University of Hradec
+Kralove.
+
+Permission is granted to view, clone, build, run, and evaluate the source code
+for academic review and non-commercial educational purposes.
+
+No permission is granted for commercial use, sublicensing, redistribution as a
+product, or use against systems without explicit authorization from their
+owner/operator.
+
+The software is provided "as is", without warranty of any kind. The author is
+not liable for misuse, operational damage, data loss, or legal consequences
+arising from unauthorized scanning or security testing.
+
+Third-party dependencies, external scanners, models, and documentation
+referenced by this project remain under their own licenses.

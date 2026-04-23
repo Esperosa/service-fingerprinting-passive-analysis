@@ -1,0 +1,17 @@
+{
+  "devices": [
+    {
+      "hostname": "branch-sw01",
+      "ip": "192.168.56.3",
+      "issues": [
+        {
+          "id": "scrapli-001",
+          "title": "Unused access port left enabled",
+          "severity": "low",
+          "summary": "Interface Gi1/0/44 remains enabled without expected access policy.",
+          "recommendation": "Shutdown unused port or apply standard access edge template."
+        }
+      ]
+    }
+  ]
+}
