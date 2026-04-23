@@ -92,6 +92,10 @@ Verejny URL repozitare:
 https://github.com/Esperosa/service-fingerprinting-passive-analysis
 ```
 
+Tento korenovy URL je stabilni cil QR kodu v priloze bakalarske prace. Pri
+dalsi praci v repozitari zustava stejny; jednotlive release tagy a commity se
+mohou menit nezavisle.
+
 ## Bezpecnostni vymezeni
 
 Nastroj je urcen pouze pro autorizovana laboratorni, skolni nebo vlastni
