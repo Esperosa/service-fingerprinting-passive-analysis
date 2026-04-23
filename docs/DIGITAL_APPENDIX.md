@@ -29,3 +29,12 @@ cargo build --release
 
 The directory `workspace_thesis_verify_current` contains the controlled
 verification workspace referenced by the thesis text.
+
+The verified release build is attached to:
+
+```text
+https://github.com/Esperosa/service-fingerprinting-passive-analysis/releases/tag/v0.1.0-thesis
+```
+
+The release verification protocol is stored in
+`docs/RELEASE_VERIFICATION_2026-04-23.md`.

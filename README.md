@@ -39,6 +39,10 @@ cargo build --release
 
 Vysledek: vsechny kontroly prosly.
 
+Release `v0.1.0-thesis` byl dodatecne overen primo ze ZIP souboru stazeneho z
+GitHubu. EXE spusti demo E2E beh a server vraci webove UI i API health endpoint.
+Detailni protokol je v `docs/RELEASE_VERIFICATION_2026-04-23.md`.
+
 ## Rychly start
 
 Predpoklady:
