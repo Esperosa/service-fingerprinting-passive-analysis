@@ -864,6 +864,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     fn readiness_report_scores_existing_workspace() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let report = assess_workspace(&workspace, false).expect("readiness");

@@ -482,6 +482,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     fn validation_bundle_adds_safe_pentest_and_context_lanes() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let report = Workspace::open(&workspace)

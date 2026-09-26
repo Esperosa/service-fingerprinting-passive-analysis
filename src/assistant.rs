@@ -1782,6 +1782,7 @@ mod tests {
     use super::*;
 
     #[tokio::test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     async fn deterministic_answer_works_with_sample_report() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let report = Workspace::open(&workspace)
@@ -1809,6 +1810,7 @@ mod tests {
     }
 
     #[tokio::test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     async fn deterministic_followup_gives_actionable_repair_steps() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let report = Workspace::open(&workspace)
@@ -1898,6 +1900,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     fn assistant_context_contains_decision_lanes_for_model_grounding() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let mut report = Workspace::open(&workspace)

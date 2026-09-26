@@ -1279,6 +1279,8 @@ impl HttpPentestLab {
             while thread_running.load(Ordering::SeqCst) {
                 match listener.accept() {
                     Ok((mut stream, _)) => {
+                        // Accepted sockets inherit non-blocking mode on Windows.
+                        let _ = stream.set_nonblocking(false);
                         let mut buffer = [0_u8; 2048];
                         let bytes = stream.read(&mut buffer).unwrap_or(0);
                         if bytes == 0 {

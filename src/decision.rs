@@ -777,6 +777,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "requires local workspace_fullstack fixture (not published)"]
     fn decision_bundle_adds_forensic_and_agent_context() {
         let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("workspace_fullstack");
         let report = Workspace::open(&workspace)
