@@ -2,7 +2,7 @@
 
 Tento dokument shrnuje dnes skutecne provedene zive overeni nad externimi sluzbami a lokalnimi workspacy.
 
-Reprodukce je skriptem [enterprise-live-proof.ps1](D:/Bakula/bakula-program/scripts/enterprise-live-proof.ps1).
+Reprodukce je skriptem [enterprise-live-proof.ps1](../scripts/enterprise-live-proof.ps1).
 
 ## 1. PostgreSQL control-plane backend
 
@@ -23,19 +23,19 @@ Provedene kroky:
 - `external-sql ha plan`
 - `external-sql status`
 
-Artefakty:
+Artefakty (skript je vytvari lokalne; workspaces nejsou soucasti repozitare):
 
-- [pg-init.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-init.json)
-- [pg-user-admin.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-user-admin.json)
-- [pg-user-viewer.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-user-viewer.json)
-- [pg-token-admin.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-token-admin.json)
-- [pg-ha-policy.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-ha-policy.json)
-- [pg-node-a.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-node-a.json)
-- [pg-node-b.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-node-b.json)
-- [pg-node-c.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-node-c.json)
-- [pg-job.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-job.json)
-- [pg-ha-plan.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-ha-plan.json)
-- [pg-status.json](D:/Bakula/bakula-program/workspace_enterpriseproof/pg-status.json)
+- `workspace_enterpriseproof/pg-init.json`
+- `workspace_enterpriseproof/pg-user-admin.json`
+- `workspace_enterpriseproof/pg-user-viewer.json`
+- `workspace_enterpriseproof/pg-token-admin.json`
+- `workspace_enterpriseproof/pg-ha-policy.json`
+- `workspace_enterpriseproof/pg-node-a.json`
+- `workspace_enterpriseproof/pg-node-b.json`
+- `workspace_enterpriseproof/pg-node-c.json`
+- `workspace_enterpriseproof/pg-job.json`
+- `workspace_enterpriseproof/pg-ha-plan.json`
+- `workspace_enterpriseproof/pg-status.json`
 
 Vysledek:
 
@@ -60,14 +60,14 @@ Provedene kroky:
 - druhy `platform worker run --once --broker-uri ...` na `broker-node-b`
 - `platform status`
 
-Artefakty:
+Artefakty (skript je vytvari lokalne; workspaces nejsou soucasti repozitare):
 
-- [broker-init.json](D:/Bakula/bakula-program/workspace_brokerproof/broker-init.json)
-- [broker-job.json](D:/Bakula/bakula-program/workspace_brokerproof/broker-job.json)
-- [broker-worker-a.json](D:/Bakula/bakula-program/workspace_brokerproof/broker-worker-a.json)
-- [broker-worker-b.json](D:/Bakula/bakula-program/workspace_brokerproof/broker-worker-b.json)
-- [broker-status.json](D:/Bakula/bakula-program/workspace_brokerproof/broker-status.json)
-- [report.json](D:/Bakula/bakula-program/workspace_brokerproof/runs/run-20260408162106-1-87ac7a6385ad454c8af221145ce11d8d/report.json)
+- `workspace_brokerproof/broker-init.json`
+- `workspace_brokerproof/broker-job.json`
+- `workspace_brokerproof/broker-worker-a.json`
+- `workspace_brokerproof/broker-worker-b.json`
+- `workspace_brokerproof/broker-status.json`
+- `workspace_brokerproof/runs/run-20260408162106-1-87ac7a6385ad454c8af221145ce11d8d/report.json`
 
 Vysledek:
 

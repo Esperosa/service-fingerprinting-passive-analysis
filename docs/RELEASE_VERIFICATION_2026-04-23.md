@@ -27,13 +27,13 @@ The release ZIP contains:
 gh release download v0.1.0-thesis `
   --repo Esperosa/service-fingerprinting-passive-analysis `
   --pattern bakula-program-20260423-083911.zip `
-  --dir D:\Bakula\_release_verify\public-release
+  --dir .\public-release
 
-Get-FileHash D:\Bakula\_release_verify\public-release\bakula-program-20260423-083911.zip -Algorithm SHA256
+Get-FileHash .\public-release\bakula-program-20260423-083911.zip -Algorithm SHA256
 
 Expand-Archive `
-  -LiteralPath D:\Bakula\_release_verify\public-release\bakula-program-20260423-083911.zip `
-  -DestinationPath D:\Bakula\_release_verify\public-release -Force
+  -LiteralPath .\public-release\bakula-program-20260423-083911.zip `
+  -DestinationPath .\public-release -Force
 
 .\bakula-program.exe --help
 .\bakula-program.exe demo e2e --workspace .\workspace_release_verify

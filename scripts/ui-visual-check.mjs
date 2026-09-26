@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
 const baseUrl = process.argv[2] ?? process.env.BAKULA_UI_URL ?? 'http://127.0.0.1:8099/';
-const outDir = process.argv[3] ?? 'D:/Bakula/bakula-program/workspace_fullstack';
+const outDir = process.argv[3] ?? 'workspace_fullstack';
 
 await fs.mkdir(outDir, { recursive: true });
 const browser = await chromium.launch({ executablePath: edgePath, headless: true });

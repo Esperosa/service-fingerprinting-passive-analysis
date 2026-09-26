@@ -8,7 +8,7 @@ Tato dokumentace shrnuje tri klicove doplňky nad puvodni platformni vrstvu:
 
 ## PostgreSQL
 
-Implementace je v [external_sql.rs](D:/Bakula/bakula-program/src/external_sql.rs).
+Implementace je v [external_sql.rs](../src/external_sql.rs).
 
 Pouziva tabulky:
 
@@ -25,7 +25,7 @@ Smysl:
 
 ## Redis Streams
 
-Implementace je v [broker.rs](D:/Bakula/bakula-program/src/broker.rs).
+Implementace je v [broker.rs](../src/broker.rs).
 
 Smysl:
 
@@ -41,7 +41,7 @@ Aktualni model:
 
 ## HA / rolling upgrades
 
-Implementace je v [platform.rs](D:/Bakula/bakula-program/src/platform.rs).
+Implementace je v [platform.rs](../src/platform.rs).
 
 Doplneny byly:
 
