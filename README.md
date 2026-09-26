@@ -45,4 +45,4 @@ Webové UI se poté otevře na `http://127.0.0.1:8080`.
 
 Repozitář obsahuje demo a referenční data pro lokální ověření, ale ne historické soukromé workspaces, lokální logy, build cache ani zdrojové texty bakalářské práce. Aktivní skenování používejte jen v prostředí, ke kterému máte oprávnění; šablony pro webové kontroly jsou v `resources/nuclei-templates/controlled/`.
 
-Tento kořenový URL repozitáře je stabilní odkaz uvedený v příloze práce. Licence zdrojového kódu je v [LICENSE](LICENSE); externí nástroje mají vlastní licence.
+Tento kořenový URL repozitáře je stabilní odkaz uvedený v příloze práce. Zdrojový kód je pod licencí MIT, viz [LICENSE](LICENSE); externí nástroje mají vlastní licence.
