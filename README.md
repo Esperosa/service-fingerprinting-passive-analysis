@@ -1,109 +1,44 @@
-# Fingerprinting sluzeb a pasivni analyza sitoveho provozu
+# Fingerprinting služeb a pasivní analýza síťového provozu
 
-Tento repozitar je verejna digitalni priloha bakalarske prace na FIM UHK.
-Obsahuje zdrojovy kod prototypu pro korelaci aktivniho inventare sitovych
-sluzeb, verejneho kontextu zranitelnosti a vybranych pasivnich udalosti.
+Veřejná softwarová příloha mé bakalářské práce na FIM UHK. Prototyp v Rustu spojuje aktivní inventář služeb, kontext zranitelností a vybrané pasivní síťové události do nálezů, které lze zpětně prověřit.
 
-Pracovni nazev binarky v kodu je `bakula-program`, ale vecny popis projektu je:
-fingerprinting sluzeb a pasivni analyza sitoveho provozu pro detekci
-bezpecnostnich hrozeb.
+**Role:** návrh a implementace prototypu, webového rozhraní, testů a ověření vydaného balíčku.  
+**Stack:** Rust, Axum, TypeScript/CSS, Nmap, Suricata, Zeek, CPE/CVE/CVSS.  
+**Stav:** akademický prototyp a ověřený release; nejde o nasazený produkční SOC nástroj.
 
-## Co repozitar obsahuje
+## Co projekt řeší
 
-- Rust CLI a server (`src`, `tests`, `Cargo.toml`, `Cargo.lock`).
-- Staticke webove UI a zdrojove TypeScript/CSS soubory (`ui`, `ui-src`).
-- Kontrolovane `nuclei` sablony pro nedestruktivni webove kontroly.
-- Demo a referencni data pro lokalni overeni.
-- Referencni workspace pouzity pri overeni prace: `workspace_thesis_verify_current`.
-- Dokumentaci k architekture, workflow, overeni a limitum v adresari `docs`.
+Samotný seznam otevřených portů nevysvětluje, co na nich běží ani které události se k nim vztahují. Projekt proto skládá několik kroků do jedné kontrolovatelné cesty:
 
-Repozitar zamerne neobsahuje:
+1. Inventář hostů a služeb z aktivního zjišťování.
+2. Normalizace služeb a přiřazení CPE a veřejného CVE/CVSS kontextu.
+3. Import událostí ze Suricata EVE JSON a logů Zeeku.
+4. Korelace událostí k hostům/službám, skórování a triage nálezů.
+5. Report s validační stopou a manifestem s kontrolními hashi.
 
-- build cache (`target`, `node_modules`),
-- historicke lokalni workspaces a logy,
-- binarni soubory `httpx.exe` a `nuclei.exe`,
-- ZIP baliky externich nastroju,
-- LaTeX zdroje bakalarske prace.
+Kód je v `src/`, testy v `tests/`, statické UI v `ui/` a jeho zdroje v `ui-src/`. Podrobnější architektura, workflow a limity jsou v [docs](docs/).
 
-## Overeny stav
+## Jak si projekt ověřit
 
-Lokalen byly pred publikaci spusteny tyto kontroly:
+Před zveřejněním prošly lokálně `cargo fmt --check`, `npm run build:ui`, `npm run test:ui`, `cargo test` a `cargo build --release`. Release [`v0.1.0-thesis`](https://github.com/Esperosa/service-fingerprinting-passive-analysis/releases/tag/v0.1.0-thesis) byl navíc ověřen z balíčku staženého z GitHubu: spuštění EXE, demo E2E běh a odpověď serveru na UI a health endpoint. Přesné kroky a hash balíčku jsou v [protokolu ověření](docs/RELEASE_VERIFICATION_2026-04-23.md).
 
-```powershell
-cargo fmt --check
-npm run build:ui
-npm run test:ui
-cargo test
-cargo build --release
-```
+### Rychlý start ze zdrojů
 
-Vysledek: vsechny kontroly prosly.
-
-Release `v0.1.0-thesis` byl dodatecne overen primo ze ZIP souboru stazeneho z
-GitHubu. EXE spusti demo E2E beh a server vraci webove UI i API health endpoint.
-Detailni protokol je v `docs/RELEASE_VERIFICATION_2026-04-23.md`.
-
-## Rychly start
-
-Predpoklady:
-
-- Rust toolchain,
-- Node.js a npm,
-- volitelne Nmap, ProjectDiscovery httpx/nuclei a Ollama.
-
-Instalace zavislosti a build UI:
+Vyžaduje Rust toolchain a Node.js/npm. Nmap a další externí nástroje jsou potřeba jen pro příslušné volitelné scénáře.
 
 ```powershell
 npm install
 npm run build:ui
-```
-
-Spusteni testu:
-
-```powershell
 cargo test
 npm run test:ui
-```
-
-Ukazkovy E2E beh:
-
-```powershell
 cargo run -- demo e2e --workspace .\workspace
 cargo run -- server spust --workspace .\workspace
 ```
 
-Webove UI je potom dostupne na `http://127.0.0.1:8080`.
+Webové UI se poté otevře na `http://127.0.0.1:8080`. Pracovní název binárky v kódu je `bakula-program`.
 
-## Vazba na bakalarskou praci
+## Rozsah a bezpečnost
 
-Prototyp implementuje technicke jadro popsane v praci:
+Repozitář obsahuje demo a referenční data pro lokální ověření, ale ne historické soukromé workspaces, lokální logy, build cache ani zdrojové texty bakalářské práce. Aktivní skenování používejte jen v prostředí, ke kterému máte oprávnění; šablony pro webové kontroly jsou v `resources/nuclei-templates/controlled/`.
 
-1. aktivni inventar hostu a sluzeb,
-2. mapovani sluzeb na CPE,
-3. obohaceni o CVE/CVSS kontext,
-4. import pasivnich udalosti ze Suricata EVE JSON a Zeek logu,
-5. korelaci udalosti na hosty/sluzby,
-6. scoring, nalezy, validacni stopy a triage kroky,
-7. auditovatelny report a manifest s kontrolnimi hashi.
-
-Verejny URL repozitare:
-
-```text
-https://github.com/Esperosa/service-fingerprinting-passive-analysis
-```
-
-Tento korenovy URL je stabilni cil QR kodu v priloze bakalarske prace. Pri
-dalsi praci v repozitari zustava stejny; jednotlive release tagy a commity se
-mohou menit nezavisle.
-
-## Bezpecnostni vymezeni
-
-Nastroj je urcen pouze pro autorizovana laboratorni, skolni nebo vlastni
-prostredi. Aktivni skenovani a webove kontroly mohou byt mimo autorizovany
-rozsah neeticke nebo protipravni. Pouzivejte vlastni scope a nedestruktivni
-profily.
-
-## Licence
-
-Kod je zverejnen jako soucast akademicke prilohy. Podrobnosti jsou v `LICENSE`.
-Externi zavislosti a nastroje maji vlastni licence.
+Tento kořenový URL repozitáře je stabilní odkaz uvedený v příloze práce. Licence zdrojového kódu je v [LICENSE](LICENSE); externí nástroje mají vlastní licence.
